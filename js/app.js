@@ -8,8 +8,15 @@ const loadPhones = async(searchText) =>{
 const displayPhone = phones =>{
    const phonesContainer = document.getElementById('phone-container');
    phonesContainer.textContent = '';
-   //* display 20 phones only
-   phones = phones.slice(0, 10);
+   //* display 10 phones only
+   const showAll = document.getElementById('show-all');
+   if(phones.length>10){
+    showAll.classList.remove('d-none');
+   }
+   else{
+    showAll.classList.add('d-none');
+   }
+//    phones = phones.slice(0, 10);
    
     //* display no phone found
     const noPhone = document.getElementById('no-found-message');
